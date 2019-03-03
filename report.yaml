@@ -1,23 +1,32 @@
 company:
-  name: Team Awesome
-  logo: Cornell_NYC_Tech_logo.png
-product_hmw: How might we showcase Cornell Tech students work?
+  name: Food Porter
+  logo: FoodPorter.png
+product_hmw: How might we innovate / optimize the food delivery process?
 product_narrative: |
-  Cornell Tech students build some amazing things. But it is often hard to show it to outside people.
-  With BuildBoard, we let students provide regular updates about their work and create a Web version of it.
+  Using remote driving to centralize food delivery and improve efficiency for large-scale restaurants.
 team:
   picture: E383E868-.jpg
   roster:
-  - name: Rachel Sobel
-    email: rachel.sobel.cornell@gmail.com
+  - name: Wen Guo
+    email: wg264@cornell.edu
     picture: rachel.jpg
-    program: LLM
-  - name: Arnaud Sahuguet
-    email: arnaud.sahuguet@cornell.edu
+    program: MBA
+  - name: Celi Sun
+    email: cs2393@cornell.edu
+    picture: arnaud.png
+    program: CS
+  - name: Cameron Mine
+    email: cim63@cornell.edu
+    picture: arnaud.png
+    program: CS
+  - name: Sat Sharma
+    email: ss3737@cornell.edu
     picture: arnaud.png
     program: MBA
+  - name: Roger Wang
+    email: rw575@cornell.edu
+    picture: arnaud.png
+    program: CS    
 assets:
 - title: Sprint 1
-  url: http://cornelltech.io/spice-up-your-personal-privacy-with-pepr/
-- title: Sprint 2
-  url: http://cornelltech.io/health-apps-on-steroids/
+  url: https://docs.google.com/presentation/d/1TNoro0grZFu7PN4BIV8kXtfR6ucvd2eQjlUB38r_dCk/edit?usp=sharing
