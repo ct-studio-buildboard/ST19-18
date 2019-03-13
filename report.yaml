@@ -13,7 +13,7 @@ team:
     program: MBA
   - name: Celi Sun
     email: cs2393@cornell.edu
-    picture: arnaud.png
+    picture: 20160901_161636000_iOS.jpg
     program: CS
   - name: Cameron Mine
     email: cim63@cornell.edu
@@ -25,7 +25,7 @@ team:
     program: MBA
   - name: Roger Wang
     email: rw575@cornell.edu
-    picture: arnaud.png
+    picture: Roger.jpg
     program: CS    
 assets:
 - title: Sprint 1
