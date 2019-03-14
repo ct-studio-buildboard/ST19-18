@@ -1,4 +1,7 @@
+# Imports
 import pygame
+print("Pygame version: ", pygame.__version__)
+
 
 class Steering():
     """docstring for Steering"""
@@ -9,13 +12,8 @@ class Steering():
         pygame.joystick.init()
         # used to manage how fast the screen updates
         self.clock = pygame.time.Clock()
-        # check if there is only one joystick
-        assert pygame.joystick.get_count() >= 1, "Didn\'t get one joystick."
-        assert pygame.joystick.get_count() <= 1, "Get multiple joysticks."
         # get the joystick and initialize it
-        self.joystick = pygame.joystick.Joystick(0)
-        self.joystick.init()
-        print('Joystick', self.joystick.get_name(), 'with id', self.joystick.get_id(), 'has been initialized.')
+        self.joystick = self.initialize_joystick()
         # get the number of axes
         self.axes = self.joystick.get_numaxes()
         print(self.axes, "axes get.")
@@ -62,21 +60,26 @@ class Steering():
         # self.right = None
 
     def drive(self):
-        loop = True
-        while loop:
-            # process event
+        while True:
             for event in pygame.event.get():
-                print(event, 'detected.')
-                # Possible joystick actions: JOYAXISMOTION JOYBALLMOTION JOYBUTTONDOWN JOYBUTTONUP JOYHATMOTION
-                # if event.type == pygame.JOYAXISMOTION:
-                #     print("----------------axes---------------")
-                #     for i in range(self.axes):
-                #         print(i, self.joystick.get_axis(i))
-                if event.type == pygame.QUIT:
-                    loop = False
-            # limit to 20 frames per second
+                if(event.type == pygame.QUIT):
+                    print("Terminating program")
+                    self.terminate()
+                    exit(0)
+                if(event.type == pygame.JOYAXISMOTION):
+                    if(event.axis == 0):
+                        # Steering wheel motion detected
+                        print("angle", ((event.value * 45) + 90))
+                    elif(event.axis == 2):
+                        # Peddle motion detected (left = 1, right = -1)
+                        if(event.value > 0):
+                            print("gas has been pressed:", event.value * 99)
+                            # Send increase speed and go forward
+                        elif(event.value < 0):
+                            print("break has been pressed", event.value)
+                        else:
+                            print("stop the vehicle")
             self.clock.tick(20)
-        self.terminate()
 
     def terminate(self):
         # uninitialize this joystick
@@ -86,7 +89,17 @@ class Steering():
         # uninitialize pygame
         pygame.quit()
 
-        
+    def initialize_joystick():
+        """Looks to see if a joystick has been plugged in and initializes it"""
+        joystick_count = pygame.joystick.get_count()
+        if(joystick_count >= 1):
+            wheel = pygame.joystick.Joystick(0)
+            print("Initialized", wheel.get_id(), "named ", wheel.get_name())
+            return wheel.init()
+        else:
+            print("No joysticks found.")
+            exit(-1)
+
 
 if __name__ == '__main__':
     wheel = Steering()
