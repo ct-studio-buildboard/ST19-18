@@ -9,23 +9,23 @@ team:
   roster:
   - name: Wen Guo
     email: wg264@cornell.edu
-    picture: Wen.jpg
+    picture: Images/Wen.jpg
     program: MBA
   - name: Celi Sun
     email: cs2393@cornell.edu
-    picture: 20160901_161636000_iOS.jpg
+    picture: Images/Celi.jpg
     program: CS
   - name: Cameron Mine
     email: cim63@cornell.edu
-    picture: Reduced_Size.jpg
+    picture: Images/Cameron.jpg
     program: CS
   - name: Sat Sharma
     email: ss3737@cornell.edu
-    picture: 49656301_1221261221356285_530418655645663232_n.jpg
+    picture: Images/Sat.jpg
     program: MBA
   - name: Roger Wang
     email: rw575@cornell.edu
-    picture: Roger.jpg
+    picture: Images/Roger.jpg
     program: CS    
 assets:
 - title: Sprint 1
