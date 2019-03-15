@@ -1,6 +1,6 @@
 company:
   name: Food Porter
-  logo: FoodPorter.png
+  logo: Images/FoodPorter.png
 product_hmw: How might we innovate / optimize the food delivery process?
 product_narrative: |
   Using remote driving to centralize food delivery and improve efficiency for large-scale restaurants.
