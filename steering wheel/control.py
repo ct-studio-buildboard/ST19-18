@@ -192,9 +192,14 @@ class Steering():
                         # else:
                         #     print("stop the vehicle")
                 if event.type == pygame.JOYBUTTONDOWN:
+                    # print(event)
                     if event.button == 9:
                         self.backward = not self.backward
                         print('backward state:', self.backward)
+                    elif event.button == 4:
+                        run_action('camleft')
+                    elif event.button == 5:
+                        run_action('camright')
             self.clock.tick(20)
 
     def terminate(self):
