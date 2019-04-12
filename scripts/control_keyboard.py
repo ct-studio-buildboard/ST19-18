@@ -98,6 +98,9 @@ class Steering():
 
         self.backward = False # start with moving forward
         self.direction = 0 # 0 is straight, 1 is left, 2 is right
+        self.speed = 60
+        self.camera_up_angle = 0
+        self.camera_left_angle = 0
 
     def drive(self):
         while True:
@@ -142,6 +145,32 @@ class Steering():
                 else:
                     print('change mode from forward to backward')
                 self.backward = not self.backward
+            if keyboard.is_pressed('i'):
+                if self.camera_up_angle < 60:
+                    self.camera_up_angle += 20
+                    run_action('camup')
+            elif keyboard.is_pressed('k'):
+                if self.camera_up_angle > -40:
+                    self.camera_up_angle -= 20
+                    run_action('camdown')
+            elif keyboard.is_pressed('j'):
+                if self.camera_left_angle < 3:
+                    self.camera_left_angle += 1
+                    run_action('camleft')
+            elif keyboard.is_pressed('l'):
+                if self.camera_left_angle > -3:
+                    self.camera_left_angle -= 1
+                    run_action('camright')
+            # accelerate
+            if keyboard.is_pressed('n'):
+                if self.speed < 100:
+                    self.speed += 20
+                    run_speed(str(self.speed))
+            # deaccelerate
+            elif keyboard.is_pressed('m'):
+                if self.speed > 20:
+                    self.speed -= 20
+                    run_speed(str(self.speed))
             # check keyboard input 10 times every second
             self.clock.tick(10)
 
