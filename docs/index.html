@@ -848,9 +848,10 @@
 <!-- End custom js for this page-->
 <script type="text/javascript">
     var w;
-    console.log('inside update speed script')
+    // console.log('inside update speed script')
 
     function update_speed() {
+      console.log('inside update speed script')
       if(typeof(Worker) !== "undefined") {
         if(typeof(w) == "undefined") {
           w = new Worker("js/update_speed.js");
