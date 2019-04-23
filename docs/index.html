@@ -364,7 +364,8 @@
                       </script> -->
                       <p class="mb-0 text-right">Speed</p>
                       <div class="fluid-container">
-                        <h3 class="font-weight-medium text-right mb-0"><output id='speed'  onload="update_speed()"></output></h3>
+                        <h3 class="font-weight-medium text-right mb-0"><output id='speed'  onload="startWorker()"></output></h3>
+                        <button onclick="startWorker()">Start Worker</button> 
                     </div>
                 </div>
             </div>
@@ -850,7 +851,7 @@
     var w;
     // console.log('inside update speed script')
 
-    function update_speed() {
+    function startWorker() {
       console.log('inside update speed script')
       if(typeof(Worker) !== "undefined") {
         if(typeof(w) == "undefined") {
