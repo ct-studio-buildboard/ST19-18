@@ -956,6 +956,7 @@
 <!-- End custom js for this page-->
 <script type="text/javascript">
     var w;
+    console.log('inside update speed script')
 
     function update_speed() {
       if(typeof(Worker) !== "undefined") {
@@ -964,7 +965,7 @@
       }
       w.onmessage = function(event) {
           document.getElementById("speed").innerHTML = event.data;
-          system.log()
+          console.log(event.data)
       };
     } else {
       document.getElementById("speed").innerHTML = "Sorry, your browser does not support Web Workers...";
