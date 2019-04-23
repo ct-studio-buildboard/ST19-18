@@ -344,7 +344,7 @@
                       </script> -->
                       <p class="mb-0 text-right">Speed</p>
                       <div class="fluid-container">
-                        <h3 class="font-weight-medium text-right mb-0" onload="update_speed()"><output id='speed'></output></h3>
+                        <h3 class="font-weight-medium text-right mb-0"><output id='speed'  onload="update_speed()"></output></h3>
                     </div>
                 </div>
             </div>
@@ -964,6 +964,7 @@
       }
       w.onmessage = function(event) {
           document.getElementById("speed").innerHTML = event.data;
+          system.log()
       };
     } else {
       document.getElementById("speed").innerHTML = "Sorry, your browser does not support Web Workers...";
