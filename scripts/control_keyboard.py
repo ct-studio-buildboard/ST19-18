@@ -5,13 +5,10 @@ if sys.version_info.major < 3 or sys.version_info.minor < 4:
 
 import keyboard
 import pygame
-# from pygame.locals import *
-# print("Pygame version: ", pygame.__version__)
-
 import requests
 
-HOST      = '10.148.131.75'
-PORT      = '8000'
+HOST = '10.148.131.75'
+PORT = '8000'
 
 # BASE_URL is variant use to save the format of host and port
 BASE_URL = 'http://' + HOST + ':'+ PORT + '/'
@@ -98,7 +95,7 @@ class Steering():
 
         self.backward = False # start with moving forward
         self.direction = 0 # 0 is straight, 1 is left, 2 is right
-        self.speed = 60
+        self.speed = 60 # initial speed, speed is 0-100
         self.camera_up_angle = 0
         self.camera_left_angle = 0
 
@@ -145,6 +142,7 @@ class Steering():
                 else:
                     print('change mode from forward to backward')
                 self.backward = not self.backward
+            # use "i j k l" to control camera direction
             if keyboard.is_pressed('i'):
                 if self.camera_up_angle < 60:
                     self.camera_up_angle += 20
@@ -175,6 +173,7 @@ class Steering():
             self.clock.tick(10)
 
 if __name__ == '__main__':
+    # check connection
+    print('connection:', connection_ok())
     wheel = Steering()
     wheel.drive()
-    # print(connection_ok())

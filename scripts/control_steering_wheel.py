@@ -4,25 +4,17 @@ if sys.version_info.major < 3 or sys.version_info.minor < 4:
     raise RuntimeError('At least Python 3.4 is required')
 
 import pygame
-print("Pygame version: ", pygame.__version__)
+# print("Pygame version: ", pygame.__version__)
 
 import requests
 
-HOST      = '10.148.131.75'
-PORT      = '8000'
+HOST = '10.148.131.75'
+PORT = '8000'
 
 # BASE_URL is variant use to save the format of host and port
 BASE_URL = 'http://' + HOST + ':'+ PORT + '/'
 
-            # elif key_press == Qt.Key_W:         # W
-            #     run_action('forward')
-            # elif key_press == Qt.Key_A:         # A
-            #     run_action('fwleft')
-            # elif key_press == Qt.Key_S:         # S
-            #     run_action('backward')
-            # elif key_press == Qt.Key_D:         # D
-            #     run_action('fwright')
-
+# send http request to control the car
 def __request__(url, times=10):
     for x in range(times):
         try:
@@ -140,21 +132,6 @@ class Steering():
         VIDEOEXPOSE      none
         USEREVENT        code
         """
-        # block everything except quit, activeevent, joyaxismotion, userevent
-        # pygame.event.set_blocked(pygame.KEYDOWN)
-        # pygame.event.set_blocked(pygame.KEYUP)
-        # pygame.event.set_blocked(pygame.MOUSEMOTION)
-        # pygame.event.set_blocked(pygame.MOUSEBUTTONUP)
-        # pygame.event.set_blocked(pygame.MOUSEBUTTONDOWN)
-        # pygame.event.set_blocked(pygame.JOYBALLMOTION)
-        # pygame.event.set_blocked(pygame.JOYHATMOTION)
-        # pygame.event.set_blocked(pygame.JOYBUTTONUP)
-        # pygame.event.set_blocked(pygame.JOYBUTTONDOWN)
-        # pygame.event.set_blocked(pygame.VIDEORESIZE)
-        # pygame.event.set_blocked(pygame.VIDEOEXPOSE)
-
-        # self.left = None
-        # self.right = None
 
     def drive(self):
         while True:
@@ -223,6 +200,7 @@ class Steering():
 
 
 if __name__ == '__main__':
+    # check connection
+    print('connection:', connection_ok())
     wheel = Steering()
     wheel.drive()
-    # print(connection_ok())
