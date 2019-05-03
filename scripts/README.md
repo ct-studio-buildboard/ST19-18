@@ -33,7 +33,8 @@ button 9: shift mode between moving forward and backward
 button 4: camera move left
 button 5: camera move right
 
-#############################
+############################# \
+
 The third script file here is a copy of what is running on our AWS Sagemaker instance. Th video from the prototype car is sent to AWS Kinesis and then passed to AWS Sagemaker. This allows us to quickly make a segmentation mask of the input frame, which drastically decreases the size of the video frame so that it can minimize the communication latency between the car and the remote drive.
 
 Additionally, by using AWS Kinesis to run our live streaming provides the following security safe-guards:
