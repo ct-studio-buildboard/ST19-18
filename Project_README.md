@@ -9,6 +9,8 @@ XPorter leverages the power of remote driving to create a drive-on-demand system
 
 
 ### Streaming Video
+
+#### IP Camera Solution
 Transporting the video to the driver was a essential task for us. In order to do this we started by downloading mjpg-streamer to the raspberry pi. mjpg-streamer is a command line tool specializing in copying JPEG frames from a input source, in this case the camera on the vehicle, to  output locations. Essentially, mjpg-streamer took our basic USB camera a made it a IP camera. The script in the driving files runs the following:
 
 ```
